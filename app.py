@@ -33,18 +33,13 @@ def analyze_claim():
     try:
         response = model.generate_content(prompt)
         result_text = response.text.strip()
-        
-        # Clean up potential markdown formatting
         if result_text.startswith("```json"):
             result_text = result_text.replace("```json", "").replace("```", "").strip()
         elif result_text.startswith("```"):
             result_text = result_text.replace("```", "").strip()
-            
         result = json.loads(result_text)
         return jsonify(result)
-
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
