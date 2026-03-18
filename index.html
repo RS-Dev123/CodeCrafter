@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI News Detector | Premium</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="bg-orb orb-1"></div>
+    <div class="bg-orb orb-2"></div>
+    <div class="bg-orb orb-3"></div>
+
+    <div class="layout">
+        <aside class="sidebar glass-panel">
+            <div class="logo">
+                <div class="ai-badge pulse-anim">AI</div>
+            </div>
+            <nav class="nav-icons">
+                <a href="#" class="active"><i class="fa-solid fa-border-all"></i></a>
+                <a href="#"><i class="fa-regular fa-clock"></i></a>
+                <a href="#"><i class="fa-solid fa-shield-halved"></i></a>
+                <a href="#"><i class="fa-solid fa-gear"></i></a>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="top-nav glass-panel">
+                <div class="brand">
+                    <h2>CodeCrafter<span class="gradient-text">Fake News Detector</span> <span class="beta-tag">PRO</span></h2>
+                </div>
+                <div class="user-actions">
+                    <i class="fa-regular fa-bell hover-glow"></i>
+                    <div class="user-avatar"><i class="fa-solid fa-user-astronaut"></i></div>
+                </div>
+            </header>
+
+            <div class="hero fade-in-up">
+                <div class="powered-by glass-badge">
+                    <span class="dot blink"></span> Powered by AI
+                </div>
+                <h1 class="title-anim">Truth <br> <span class="gradient-text">Illuminated.</span></h1>
+                <p>Advanced AI-driven credibility analysis. Paste your article below.</p>
+                
+                <div class="input-container glass-panel">
+                    <textarea id="newsInput" placeholder="Paste a news headline, claim, or excerpt here..."></textarea>
+                    <button id="analyzeBtn" onclick="analyzeNews()">
+                        <span id="btnText">Analyze Deeply</span>
+                        <i id="btnIcon" class="fa-solid fa-wand-magic-sparkles"></i>
+                        <div class="loader" id="btnLoader" style="display: none;"></div>
+                    </button>
+                </div>
+            </div>
+
+            <div id="resultsContainer" class="results-container" style="display: none;">
+                
+                <div class="card article-card glass-panel slide-up" style="animation-delay: 0.1s;">
+                    <div class="card-header"><i class="fa-solid fa-align-left"></i> Source Text</div>
+                    <p id="articlePreview" class="article-text">...</p>
+                </div>
+
+                <div id="verdictCard" class="card verdict-card glass-panel slide-up" style="animation-delay: 0.3s;">
+                    <div class="verdict-header">
+                        <div class="verdict-title">
+                            <div id="verdictIcon" class="icon-box pulse-slow"></div>
+                            <div>
+                                <span class="label">AI VERDICT</span>
+                                <h3 id="verdictText">Evaluating...</h3>
+                            </div>
+                        </div>
+                        <span id="categoryTag" class="category-tag glass-badge">General</span>
+                    </div>
+
+                    <div class="confidence-section">
+                        <div class="conf-labels">
+                            <span>Neutral Confidence</span>
+                            <span id="confValue" class="gradient-text">0%</span>
+                        </div>
+                        <div class="progress-bg">
+                            <div id="progressBar" class="progress-fill glow-shadow"></div>
+                        </div>
+                    </div>
+
+                    <div class="reason-box glass-panel">
+                        <i class="fa-solid fa-microchip"></i>
+                        <p id="reasonText" class="reason-text">...</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
