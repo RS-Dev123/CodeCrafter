@@ -56,7 +56,6 @@ function updateUI(originalText, resultData) {
     const confValue = document.getElementById('confValue');
     const progressBar = document.getElementById('progressBar');
     const reasonText = document.getElementById('reasonText');
-
     resultsContainer.style.display = 'flex';
     
     articlePreview.innerText = originalText.length > 250 ? originalText.substring(0, 250) + "..." : originalText;
